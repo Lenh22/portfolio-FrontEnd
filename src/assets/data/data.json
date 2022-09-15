@@ -1,0 +1,134 @@
+{
+  "myName": "Leandro Alonso",
+  "myDescription": "Siendo estudiante de Desarrollo Web,me gustaría poder ser parte de una zona en la que pueda demostrar mis conocimientos y que a la vez me permita mejorar tanto en lo personal como profesionalmente. Considero importante tener curiosidad y motivación de aprender continuamente, también tener desafíos que avanzar y poder obtener aprendizaje de ellos. Me agrada el trabajo en equipo y el compañerismo.",
+  "myImagen": "perfil.jpg",
+
+  "education": [
+    {
+      "imgSchool": "unlam-link.svg",
+      "school": "Universidad Nacional de La Matanza",
+      "dateStart": "Abr 2020",
+      "dateEnd": "Actualidad",
+      "career": "Tecnicatura de Desarrollo Web",
+      "cantApproved": "10",
+      "avg": "8.10"
+    },
+    {
+      "imgSchool": "unlam-link.svg",
+      "school": "Universidad Nacional de La Matanza",
+      "dateStart": "Ago 2018",
+      "dateEnd": "Dic 2020",
+      "career": "Ingeniería Informática",
+      "cantApproved": "4",
+      "avg": "8.00"
+    },
+    {
+      "imgSchool": "nubeG.png",
+      "school": "Instituto Parroquial San jose",
+      "dateStart": "Mar 2006",
+      "dateEnd": "Dic 2016",
+      "career": "Bachiller en Economía y Administración",
+      "cantApproved": "Primaria y secundaria",
+      "avg": "8.11"
+    }
+  ],
+  "course": [
+    {
+      "linkCourse": "https://mumuki.io/argentina-programa/certificates/verify/4_hpRM6KyQBN9MJX",
+      "tittleCourse": "#SéProgramar",
+      "nameCourse": "Argentina Programa 2021"
+    },
+    {
+      "linkCourse": "https://www.udemy.com/certificate/UC-639fedf2-9cd8-4610-9fa6-d9ca93c17f33/",
+      "tittleCourse": "SQL Básico - Intermedio",
+      "nameCourse": "Udemy"
+    },
+    {
+      "linkCourse": "https://www.udemy.com/certificate/UC-c3d6b557-df57-4860-a450-2c24371e6908/",
+      "tittleCourse": " Universidad Excel - Básico, intermedio y avanzado",
+      "nameCourse": "Udemy"
+    }
+  ],
+  "idiom": [
+    {
+      "idiomName": "Ingles",
+      "idiomLevel": "Básico"
+    },
+    {
+      "idiomName": "Portugués",
+      "idiomLevel": "Básico"
+    }
+  ],
+  "exp": [
+    {
+      "expStart": "Febrero 2019",
+      "expEnd": "Marzo 2019",
+      "jobName": "NevenPro",
+      "jobTittle": "Call Center",
+      "jobHomework": [
+                {
+                  "hw": "Atencion de llamadas"
+                },
+                {
+                  "hw": "Suministro de datos de contacto"
+                },
+                {
+                  "hw": "Resolucion de problemas de clientes"
+                }
+      ]
+    },
+    {
+      "expStart": "Enero 2015",
+      "expEnd": "Febrero 2019",
+      "jobName": "Verduleria Don Alfredo",
+      "jobTittle": "Repocitor",
+      "jobHomework": [
+                {
+                  "hw": "Recepcionar la mercaderia al publico o almacenarla"
+                },
+                {
+                  "hw": "Experiencia en la caja registradora,calculadoras y aceptaro pagos o dar cambios"
+                }
+      ]
+    }
+  ],
+  "instagram": "./images/icon/instagram.png",
+  "linkedIn": "./assets/images/icon/linkedin.png",
+  "git": "./assets/images/icon/github.png ",
+
+  "project": [
+    {
+      "projImg": "nubeG.png",
+      "projName": "Proyecto-1",
+      "projStart": "Sept 2022",
+      "projEnd": "Nov 2022",
+      "projDescription": "Descripcion del proyecto"
+    }
+  ],
+  "skill": [
+    {
+      "skillName": "HTML",
+      "skillLevel": "width:90%;"
+    },
+    {
+      "skillName": "CSS",
+      "skillLevel": "width:55%;"
+    },
+    {
+      "skillName": "MySQL",
+      "skillLevel": "width:75%;"
+    },
+    {
+      "skillName": "JAVA",
+      "skillLevel": "width:65%;"
+    },
+    {
+      "skillName": "JAVASCRIPT",
+      "skillLevel": "width:40%;"
+    },
+    {
+      "skillName": "BASE DE DATOS RELACIONALES",
+      "skillLevel": "width:65%;"
+    }
+  ]
+}

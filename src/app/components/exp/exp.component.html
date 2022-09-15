@@ -1,0 +1,48 @@
+<div id="experience" class="background-alt padding-left">
+    <div class="heading d-flex">
+        <h2 >Experiencias</h2>
+
+        <div type="button" class="btn btn-outline-secondary rounded-circle mx-2 p-0 d-flex border-0 h-50" routerLink="/nuevaexp" *ngIf="isLogged;">
+            <span class="material-icons-round fs-1 rounded-circle align-items-center">
+                add_circle
+            </span>
+        </div>
+    </div>
+
+    <div id="experience-timeline">
+        <div class="vtimeline-point" *ngFor="let exp of experienciaBack">
+            <div class="vtimeline-icon">
+                <i class="circle">
+                </i>
+            </div>
+
+            <div class="row-fluid vtimeline-block">
+                <p class="vtimeline-date col-12 col-md-4">{{exp.fechaInicio}} – {{exp.fechaFin}}</p>
+                <div data-date="September 2015 – September 2016" class="vtimeline-content">
+                    <div class="d-flex">
+                        <h3>{{exp.nombreExp}}</h3>
+
+                        <div *ngIf="isLogged">
+                            <button class="btn btn-primary" routerLink="/editexp/{{exp.id}}">
+                                <span class="material-icons-round">
+                                    drive_file_rename_outline
+                                </span></button>
+                            <button class="btn btn-danger" (click)="delete(exp.id)">
+                                <span class="material-icons-round">
+                                    delete
+                                </span></button>
+                        </div>
+                    </div>
+                    <h4>{{exp.subNombreExp}}</h4>
+                    <!-- <ul> <li *ngFor="let homew of homeworkList">{{homew.hw}} </li> </ul> -->
+                    <div>
+                        <p>
+                            {{exp.descripcionExp}}
+    
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div id="about" class="padding-left background-alt pt-3 pb-3">
+    <div class="container-fluid" *ngFor="let about of aboutBack">
+        <div class="row justify-content-between">
+            <div class="col-md-2 heading d-flex">
+                <h2 class="">Sobre Mí</h2>
+                <!--btn-->
+                <div *ngIf="isLogged;" type="button" class="btn btn-outline-secondary rounded-circle mx-2 p-0 d-flex border-0" routerLink="/editabout/{{about.id}}">
+                    <span class="material-icons-round fs-1 rounded-circle align-items-center">
+                        drive_file_rename_outline
+                    </span>
+                </div>
+            </div>
+            <!--Imagen e info-->
+            <div class="col-md-9" >
+                <div id="" class="col-md-3 rounded-start fotoPerfil rounded-circles">
+                    <!-- De esta manera son imagenes llamadas del data.json -->
+                    <!-- src=""./assets/images/perfil.jpg"" -->
+                    <img
+                    src="./assets/images/{{about.imagenMi}}" 
+                    class=" rounded-circles  img-thumbnail" alt="Foto Perfil">
+                </div>
+                <div>
+                    <h4 id="nombrePersonal">{{about.nombre}}</h4>
+                    <p id="descripcionAbout">
+                      {{about.descripcion}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,709 @@
+/* You can add global styles to this file, and also import other style files */
+.row {
+  --bs-gutter-x: 0;
+}
+/* Imagen default */
+img{
+  background-image: url(./assets/images/nubeG.png);
+}
+/* Barra Scroll*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: black;
+  opacity: 0.5;
+}
+::-webkit-scrollbar-thumb {
+  border-radius:30px;
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6e6124;
+}
+/*Fin de barra scroll*/
+.row-aling{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#nombrePersonal{
+  transition:1s;
+  font-family: sans-serif;
+}
+#nombrePersonal:hover{
+  color:#6e6124;
+  transition:1s;
+}
+#descripcionAbout{
+  font-family: monospace;
+}
+#nubeLluvia{
+  text-align: -webkit-center;
+}
+#lienzo{
+    width: 170px;
+    height: 11em;
+    display: flex;
+    position: relative;
+    bottom:115px;
+}
+.iconoIzq{
+  color:white;
+  font-size: 35px;
+}
+.iconoUsuario{
+  color:white;
+  font-size: 3rem;
+}
+#cursos{
+  justify-content:center;
+}
+#listaCursos a{
+  text-decoration:none;
+  color:#6e6124;
+}
+#idiomas{
+  justify-content:center;
+}
+
+.d-flex{
+  font-family: monospace;
+}
+.d-flex>div>h4 ul{
+  font-family: monospace;
+}
+.iconoUsuario:hover{
+  color: #7e8890;
+  transition: 0.2s;
+}
+#colorBarra{
+  background: #7a6504;
+}
+#colorBarra:hover{
+  cursor: pointer;
+}
+body{
+  cursor: default;
+}
+#menuizquierda{
+    display:flex;
+    width:  75px;
+    height: 100%;
+    background: black;
+    position: fixed;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.encabezado{
+  position:fixed;
+  width: 75px;
+  z-index: 1;
+  text-align:center;
+  }
+#home{
+  display:flex;
+  
+}
+
+#opciones{
+    justify-content: center;
+    vertical-align: top;
+    display:flex;
+    flex-direction: column;
+    margin: 0em;
+}
+#opciones li{
+    margin: 20px 0px ;
+}
+#menuizquierda a{
+    text-decoration: none;
+    color: white;
+    margin: 0.4em 0em;
+}
+#menuizquierda ul li a{
+    padding:20px;
+    font-size: 10px;
+    display: flex;
+    margin: 1em 0em;
+}
+#menuizquierda a:hover, #menuizquierda li:hover{
+    background-color: rgb(90, 90, 90);
+    color: rgb(29, 29, 29);
+}
+.encabezado:hover{
+  background-color: rgb(90, 90, 90);
+  color: rgb(29, 29, 29);
+}
+.btn:hover{
+  color:black;
+  background-color: white;
+}
+
+header{
+    background-image:url(./assets/images/code-wallpaper-14.jpg);
+    width:100%;
+    max-height: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+   
+    color: white;
+}
+.padding-left{
+    padding-left: 100px;
+    padding-right: 30px;
+}
+
+#bienvenida{
+    padding:0% 2% 9% 2%;
+}
+#saludo{
+  margin-right: 5px;
+}
+#saludo>i{
+    font-family: fantasy;
+    font-style: normal;
+    margin-bottom: 0em;
+    font-size: 4rem;
+    width:fit-content;
+}
+#saludo>i:hover{
+  -webkit-text-stroke: 1px white;
+  color: #202020; 
+  transition: 0.5s;
+}
+#saludo>h3{
+  font-family: monospace;
+  color:rgba(176, 176, 176);
+  width:fit-content;
+}
+#saludo>h3:hover{
+  color:#6e6124;
+  transition:0.5s;
+}
+.heading {
+    position: relative;
+    display: block;
+    font-size: 2em;
+    font-weight: 300;
+    margin: 0 0 50px 0;
+    padding-top: 0.5em;
+  }
+
+  .heading:after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    height: 3px;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    margin: 0px auto;
+    background: #6e6124;
+}
+#experience {
+    text-align: start;
+  }
+  #experience h2 {
+    color: #374054;
+  }
+  #experience-timeline {
+    margin: 30px auto 0 auto;
+    position: relative;
+    max-width: 1000px;
+  }
+  #experience-timeline:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 303px;
+    right: auto;
+    height: 100%;
+    width: 3px;
+    background: #252525;
+    z-index: 0;
+  }
+  #experience-timeline:after {
+    position: absolute;
+    content: "";
+    width: 3px;
+    height: 40px;
+    background: #252525;
+    background: linear-gradient(to bottom, #252525, rgba(52, 152, 219, 0));
+    top: 100%;
+    left: 303px;
+  }
+  .vtimeline-content {
+    margin-left: 350px;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    padding: 15px;
+    border-radius: 3px;
+    text-align: left;
+}
+
+.vtimeline-content h3 {
+  font-size: 1.5em;
+  font-weight: 300;
+  color: #374054;
+  display: inline-block;
+  margin: 0;
+}
+.vtimeline-content h4 {
+  font-size: 1.2em;
+  font-weight: 300;
+  color: #7e8890;
+  margin: 0 0 15px 0;
+}
+.vtimeline-content li {
+  color: #74808a;
+  font-size: 0.9em;
+  margin: 0;
+}
+.vtimeline-point {
+  position: relative;
+  display: block;
+
+  padding-bottom: 30px;
+}
+.vtimeline-icon {
+  position: relative;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  background: #202020;
+  border-radius: 50%;
+  float: left;
+  z-index: 9;
+  margin-left: 289px;
+}
+.circle {
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  background: #ffffff;
+  border-radius: 50%;
+  display: block;
+  text-align: center;
+  left: 7px;
+  top: 7px;
+}
+.vtimeline-date {
+  width: 140px;
+  text-align: start;
+  position: absolute;
+  left: 80px;
+  top: 20px;
+  font-weight: 300;
+  color: #374054;
+}
+.fondo{
+  text-align: end;
+  border-radius: 50%;
+  width: 95px;
+  right: 40px;
+}
+#centrado{
+  display:flex;
+  text-align: center;
+}
+#display-flex{
+  display:flex;
+}
+#edu{
+  width:60%;
+}
+#curso{
+  width:40%;
+}
+#education {
+  padding-top: 1em;
+  border-bottom: 1px solid #dcd9d9;
+}
+.background-alt {
+  background: #f2f2f5;
+}
+.img-thumbnail{
+ border-radius: 0;
+}
+
+.descriptionEducation ul{
+    padding:0px;
+    list-style: none;
+    color: #74808a;
+    font-size: 0.9em;
+    margin: 0;
+  }
+  .descriptionEducation h4{
+    font-family: sans-serif;
+    margin: 0;
+  }
+  .grid-centrado{
+    display:flex;
+    font-family: monospace;
+  }
+
+  .fotoPerfil{
+    position: relative;
+      width: 8rem;
+      height: 120px;
+      border-radius: 50%;
+      float: right;
+      z-index: 9;
+      margin-left: 0px;
+      left: 25px;
+      bottom:10px;
+      transition: 0.5s;
+  }
+.fotoPerfil:hover{
+  height:150px;
+  width:10rem;
+  border-radius:0%;
+}
+.rounded-circles{
+  border-radius: 50%;
+  transition: 0.5s;
+  color:#2020204b
+}
+.imagen{
+    padding: 0.25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    max-width: 70%;
+    height: auto;
+}
+.rounded-circles:hover{
+  border-radius: 0%;
+}
+#configProyecto>button{
+  width: 10em;
+  height:3em;
+}
+#contactos p{
+color:#74808a;
+font-family: monospace;
+text-align: center;
+transition:1s;
+}
+#contactos p:hover{
+  transition:2s;
+  color:#dcd9d9;
+}
+#contactos div{
+  width: auto;
+  padding:0em 1em;
+}
+.desvanece:hover{
+  opacity: 0;
+  transition:3s;
+}
+.desvanece{
+  transition: 1s;
+}
+.barraHab{
+  height: 29px;
+}
+/*=========================== Animacion============================== */
+.barraHab{
+  animation-name: barra;
+  animation-duration: 2s;
+}
+.centrado-flex{
+  display: flex;
+  justify-content: center;
+}
+@keyframes barra {
+  0%{width:0px}
+}
+#nubeGris{
+  width: 15em;
+  animation-name:nubeGris;
+  animation-duration:10s;
+  animation-iteration-count: infinite;
+  z-index: 1;
+}
+@keyframes nubeGris {
+  0%{margin-left: 0px;}
+  50%{margin-left: 20px;}
+  100%{margin-left: 0px;}
+}
+#nubeBlanca{
+  position: absolute;
+  width: 15em;
+  animation-name:nubeBlanca;
+  animation-duration:6s;
+  animation-iteration-count: infinite;
+  z-index: 2;
+}
+@keyframes nubeBlanca {
+  0%{margin-left: 0px;}
+  50%{margin-left: 5px;}
+  75%{marging-left:0px}
+  83%{margin-left: -4px;}
+  100%{margin-left: 0px;}
+}
+.efectoCaida>p{
+  margin-bottom: 0em;
+  font-weight:800;
+  font-size: 2em;
+  
+}
+.absolute>p{
+  display: flex;
+  flex-direction: column;
+  position:absolute;
+}
+
+.burbuja {
+  display: flex;
+  position:relative;
+  -webkit-animation: burbujas 2s linear infinite;
+          animation: burbujas 2s linear infinite;
+}
+
+.burbuja:nth-child(1) {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+
+.burbuja:nth-child(2) {
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+
+.burbuja:nth-child(3) {
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.burbuja:nth-child(4) {
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.burbuja:nth-child(5) {
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+
+@-webkit-keyframes burbujas {
+  0% {
+    top: 0;
+    opacity: 100%;
+  }
+
+  100% {
+    top: 300px;
+    opacity: 0;
+  }
+}
+
+@keyframes burbujas {
+  0% {
+    top: 0;
+    opacity: 100%;
+  }
+ 
+  100% {
+    top: 300px;
+    opacity: 0;
+  }
+}
+
+.opacity{
+  animation-name: saludos;
+  animation-duration:2s;
+}
+@keyframes saludos{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+
+
+
+/*==================Celular==================================*/
+@media screen and (max-width:767px) {
+  .padding-left{
+    padding-left: 4.5em;
+    padding-right: 1em;
+}
+
+  .vtimeline-content {
+    margin: 0px ;
+    text-align: center
+  }
+  .vtimeline-content h3{
+    text-align: center;
+  }
+  .vtimeline-content h3{
+    width:auto;
+    position:initial;
+
+  }
+  .vtimeline-content li {
+    list-style:none ;
+    padding:0px;
+  }
+  .vtimeline-content ul {
+    padding:0px;
+  }
+  .vtimeline-icon{
+    display:none;
+  }
+  .vtimeline-date {
+    position: inherit;
+    text-align:center;
+    text-align: center;
+    width: 100%;
+}
+#experience-timeline:after{
+  display:none;
+}
+#experience-timeline:before{
+  display:none;
+}
+.nav-link {
+  padding: 5px 0rem;
+}
+#menuizquierda {
+  width: fit-content;
+  width: 50px;
+}
+.encabezado{
+  height: fit-content;
+  width: 50px;
+  }
+  #listaCursos{
+    padding:0px;
+    text-align: center;
+    list-style: none;
+    font-family: sans-serif;
+  }
+  #listaIdiomas{
+    font-family:sans-serif;
+    text-align:center;
+    list-style: none;
+    padding:0px;
+  }
+
+  #saludo{
+    display:block;
+  }
+  .grid-centrado{
+    display: grid;
+    justify-items: center;
+  }
+  .grid-centrado h4{
+    padding:5em;
+  }
+  #configProyecto{
+    display: block !important;;
+    justify-items: center;
+  }
+  #configProyecto>button{
+    height: auto;
+    width: auto;
+    margin-top: 1em;
+    margin-left: 1em;
+    text-align: center;
+  }
+}
+/* =========Horizontal=========== */
+@media screen and (max-height:400px) {
+  .nav-link {
+    padding: 5px 0rem;
+  }
+  #menuizquierda {
+    width: fit-content;
+    width: 40px;
+  }
+
+  #menuizquierda a{
+    font-size: 20px;
+    margin:0em;
+  }
+  .encabezado{
+    height: fit-content;
+    width: 40px;
+    }
+    #opciones{
+      justify-content: center;
+      vertical-align: top;
+      display:flex;
+      flex-direction: column;
+      margin: 0em;
+  }
+  .iconoIzq{
+    font-size: 20px;
+  }
+
+}
+/* =====Login======== */
+#centradoLogin{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: fixed;
+  background-color: rgba(72, 72, 72, 0.619);
+  z-index: 10;
+  height: 100%;
+  
+}
+.login{
+  display: none;
+  font-family: monospace;
+  z-index: 999;
+  position: fixed;
+  
+}
+.login>.logoYTexto{
+  text-align: center;
+}
+.login>.logoYTexto>img{
+  width:40%;
+}
+
+.formulario>.btn{
+  width: 100%;
+  
+  
+}
+.formulario>.btn:hover{
+  color:black;
+  background-color: azure;
+}
+#emailHelp{
+  color: white;
+}
+#cancel{
+  cursor:pointer;
+  color:white;
+  font-size:2em;
+  transition:0.5s;
+}
+#cancel:hover{
+  color:black;
+}
+/* Celular */
+@media screen and (max-width:767px) {
+.login{
+  width:90%;
+  height: 90%;
+}
+
+}

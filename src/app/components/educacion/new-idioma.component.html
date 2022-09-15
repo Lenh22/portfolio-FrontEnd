@@ -1,0 +1,26 @@
+<p>new-idioma works!</p>
+<div class="container" >
+    <div class="">
+        <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+            <!--  -->
+            <div class="form-outline mb-4">
+                <input type="text" id="nombreIdi" name="nombreIdi" [(ngModel)]="nombreIdi" required
+                    class="form-control" />
+                <label class="form-label" for="">Idioma</label>
+            </div>
+
+            <!--  -->
+            <div class="form-outline mb-4">
+                <input type="text" id="nivelIdi" name="nivelIdi" [(ngModel)]="nivelIdi" required
+                    class="form-control" />
+                <label class="form-label" for="">Nivel</label>
+            </div>
+
+            <!--  -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Crear</button>
+        </form>
+
+    </div>
+</div>
+
+

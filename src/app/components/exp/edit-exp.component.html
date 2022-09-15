@@ -1,0 +1,43 @@
+<div class="container" *ngIf="expEdit">
+    <div class="">
+        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+            <div class="row mb-4">
+                <!--Inicio-->
+                <div class="col">
+                    <div class="form-outline">
+                        <input type="text" id="fechaInicio" name="fechaInicio" [(ngModel)]="expEdit.fechaInicio" required class="form-control"  />
+                        <label class="form-label" for="">Inicio</label>
+                    </div>
+                </div>
+                <!--Fin-->
+                <div class="col">
+                    <div class="form-outline">
+                        <input type="text" id="fechaFin" name="fechaFin" name="fechaFin" [(ngModel)]="expEdit.fechaFin" required   class="form-control" />
+                        <label class="form-label" for="">Fin</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NombreExp -->
+            <div class="form-outline mb-4">
+                <input type="text" id="nombreExp" name="nombreExp" [(ngModel)]="expEdit.nombreExp" required class="form-control" />
+                <label class="form-label" for="">Empresa</label>
+            </div>
+
+            <!-- SubNombreExp -->
+            <div class="form-outline mb-4">
+                <input type="text" id="subNombreExp" name="subNombreExp" [(ngModel)]="expEdit.subNombreExp" required class="form-control" />
+                <label class="form-label" for="">Empleo</label>
+            </div>
+            <!--Descripcion-->
+            <div class="form-outline mb-4">
+                <textarea class="form-control" id="descipcion"name="descripcionExp" [(ngModel)]="expEdit.descripcionExp" required rows="3"></textarea>
+                <label class="form-label" for="">Descripcion</label>
+              </div>
+
+            <!-- Editar -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Editar</button>
+        </form>
+
+    </div>
+</div>

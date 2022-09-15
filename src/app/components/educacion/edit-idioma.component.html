@@ -1,0 +1,25 @@
+<p>edit-idioma works!</p>
+<div class="container"  *ngIf="idioma">
+    <div class="">
+        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+            <!--  -->
+            <div class="form-outline mb-4">
+                <input type="text" id="nombreIdi" name="nombreIdi" [(ngModel)]="idioma.nombreIdi" required
+                    class="form-control" />
+                <label class="form-label" for="">Idioma</label>
+            </div>
+
+            <!--  -->
+            <div class="form-outline mb-4">
+                <input type="text" id="nivelIdi" name="nivelIdi" [(ngModel)]="idioma.nivelIdi" required
+                    class="form-control" />
+                <label class="form-label" for="">Nivel</label>
+            </div>
+
+            <!--  -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Editar</button>
+        </form>
+
+    </div>
+</div>
+

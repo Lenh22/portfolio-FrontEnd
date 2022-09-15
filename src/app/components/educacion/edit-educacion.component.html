@@ -1,0 +1,61 @@
+<div class="container"  *ngIf="educacion">
+    <div class="">
+        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+            <div class="row mb-4">
+                <!---->
+                <div class="col">
+                    <div class="form-outline">
+                        <input type="text" id="fechaInicio" name="fechaInicio" [(ngModel)]="educacion.fechaInicio" required
+                            class="form-control" />
+                        <label class="form-label" for="">Inicio de estudio</label>
+                    </div>
+                </div>
+                <!---->
+                <div class="col">
+                    <div class="form-outline">
+                        <input type="text" id="fechaFin" name="fechaFin" name="fechaFin" [(ngModel)]="educacion.fechaFin" required
+                            class="form-control" />
+                        <label class="form-label" for="">Fin de estudio</label>
+                    </div>
+                </div>
+            </div>
+
+            <!--  -->
+            <div class="form-outline mb-4">
+                <input type="text" id="nombreExp" name="nombreExp" [(ngModel)]="educacion.nombreEdu" required
+                    class="form-control" />
+                <label class="form-label" for="">Educacion</label>
+            </div>
+
+            <!--  -->
+            <div class="form-outline mb-4">
+                <input type="text" id="subNombreExp" name="subNombreExp" [(ngModel)]="educacion.tituloEdu" required
+                    class="form-control" />
+                <label class="form-label" for="">Titulo</label>
+            </div>
+            <!--  -->
+            <div class="form-outline mb-4">
+                <input type="number" id="subNombreExp" name="subNombreExp" [(ngModel)]="educacion.aprobadasEdu" required
+                    class="form-control" />
+                <label class="form-label" for="">Aprobadas</label>
+            </div>
+            <!--  -->
+            <div class="form-outline mb-4">
+                <input type="number" id="" name="promedio" [(ngModel)]="educacion.promedio" required
+                    class="form-control" />
+                <label class="form-label" for="">Promedio</label>
+            </div>
+            <!--  -->
+            <div class="form-outline mb-4">
+                <input type="text" id="" name="" [(ngModel)]="educacion.imagen" required
+                    class="form-control" />
+                <label class="form-label" for="">Imagen</label>
+            </div>
+
+
+            <!--  -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Editar</button>
+        </form>
+
+    </div>
+</div>

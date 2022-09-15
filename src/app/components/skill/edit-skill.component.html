@@ -1,0 +1,32 @@
+<p>edit-skill works!</p>
+<div class="container"  *ngIf="skill">
+    <div class="">
+        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+            <!--  -->
+            <div class="form-outline mb-4">
+                <input type="text" id="nombreHab" name="nombreHab" [(ngModel)]="skill.nombreHab" required
+                    class="form-control" />
+                <label class="form-label" for="">Nombre</label>
+            </div>
+
+            <!--  -->
+            <div class="form-outline mb-4">
+                <input type="text" id="nivelHab" name="nivelHab" [(ngModel)]="skill.nivelHab" required
+                    class="form-control" />
+                <label class="form-label" for="">Nivel</label>
+            </div>
+            <!--  -->
+            <div class="form-outline mb-4">
+                <input type="text" id="imgHab" name="imgHab" [(ngModel)]="skill.imgHab" required
+                    class="form-control" />
+                <label class="form-label" for="">Imagen</label>
+            </div>
+
+
+            <!--  -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Editar</button>
+        </form>
+
+    </div>
+</div>
+

@@ -1,0 +1,33 @@
+<p>new-skill works!</p>
+<div class="container" >
+    <div class="">
+        <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+            <!--  -->
+            <div class="form-outline mb-4">
+                <input type="text" id="nombreHab" name="nombreHab" [(ngModel)]="nombreHab" required
+                    class="form-control" />
+                <label class="form-label" for="">Nombre</label>
+            </div>
+
+            <!--  -->
+            <div class="form-outline mb-4">
+                <input type="number" id="nivelHab" name="nivelHab" [(ngModel)]="nivelHab" required
+                    class="form-control" />
+                <label class="form-label" for="">Nivel</label>
+            </div>
+            <!--  -->
+            <div class="form-outline mb-4">
+                <input type="text" id="imgHab" name="imgHab" [(ngModel)]="imgHab" required
+                    class="form-control" />
+                <label class="form-label" for="">Imagen</label>
+            </div>
+
+
+            <!--  -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Crear</button>
+        </form>
+
+    </div>
+</div>
+
+

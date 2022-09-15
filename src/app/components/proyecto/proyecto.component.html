@@ -1,0 +1,47 @@
+<div id="proyecto" class="background-alt padding-left">
+    <div class="heading d-flex">
+        <h2 >Proyectos</h2>
+        <button type="button" class="btn btn-dark" routerLink="/nuevoproy" *ngIf="isLogged">
+            <span class="material-icons-round">
+                add_circle
+            </span>
+         </button>
+    </div>
+    <div class="container px-4 ">
+        <div class="row g-0">
+            <div class="col" *ngFor="let project of proyectoBack">
+                <div class="p-3 border bg-light mb-3">
+                    <div id="configProyecto" class="d-flex justify-content-between">
+                        <div class="ps-2 col-md-6">
+                            <img src="./assets/images/{{project.imgProj}}"
+                                class="border border-secondary border-3 rounded-circles float-start" alt="..."
+                                width="50px" height="50px">
+                            <div class="d-flex">
+                                <h3 class="ps-2 row">{{project.nombreProj}}</h3>
+                                <div *ngIf="isLogged;">
+                                    <button class="btn btn-primary" routerLink="/editproy/{{project.id}}">
+                                        <span class="material-icons-round">
+                                            drive_file_rename_outline
+                                        </span>
+                                    </button>
+                                    <button class="btn btn-danger" (click)="delete(project.id)">
+                                        <span class="material-icons-round">
+                                            delete
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                            <span class="education-date row ps-2">{{project.fechaInicioProj}} -
+                                {{project.fechaFinProj}}</span>
+                        </div>
+                        <button type="button" class="btn btn-secondary ">Mas Informacion</button>
+                    </div>
+                    <div class="p-3">
+                        {{project.descripcionProj}}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<p>edit-curso works!</p>
+<div class="container"  *ngIf="curso">
+    <div class="">
+        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+
+            <!--  -->
+            <div class="form-outline mb-4">
+                <input type="text" id="nombreCurso" name="nombreCurso" [(ngModel)]="curso.nombreCurso" required
+                    class="form-control" />
+                <label class="form-label" for="">Nombre del curso</label>
+            </div>
+
+            <!--  -->
+            <div class="form-outline mb-4">
+                <input type="text" id="tituloCurso" name="tituloCurso" [(ngModel)]="curso.tituloCurso" required
+                    class="form-control" />
+                <label class="form-label" for="">Titulo</label>
+            </div>
+            <!--  -->
+            <div class="form-outline mb-4">
+                <input type="text" id="linkCurso" name="linkCurso" [(ngModel)]="curso.linkCurso" required
+                    class="form-control" />
+                <label class="form-label" for="">Link de certificado (opcional)</label>
+            </div>
+            <!--  -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Editar</button>
+        </form>
+
+    </div>
+</div>
