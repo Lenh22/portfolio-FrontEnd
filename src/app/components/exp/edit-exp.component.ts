@@ -18,6 +18,9 @@ export class EditExpComponent implements OnInit {
     const id = this.activatedRoute.snapshot.params['id'];
     this.expService.detail(id).subscribe(
       data=>{
+        if(data.fechaFin == 'Actualidad'){ //verificar el check
+          (<HTMLInputElement>document.getElementById("actualidad")).checked = true;
+        }
         this.expEdit = data;
       },err =>{
         alert("Error al traer el modificador experienicia");
@@ -27,6 +30,10 @@ export class EditExpComponent implements OnInit {
 
   onUpdate(): void {
     const id = this.activatedRoute.snapshot.params['id'];
+    if(this.verificarCheck()){ //verifica si esta checkeado
+      this.expEdit.fechaFin='Actualidad';
+      console.log("esta verificado el actualidad check")
+    }
     this.expService.update(id,this.expEdit).subscribe(
       data=> {
         this.router.navigate(['']);
@@ -35,5 +42,20 @@ export class EditExpComponent implements OnInit {
       }
     )
   }
+//para el Check
+checkeoActual(){
+  var check = this.verificarCheck();
+  if(check== true){
+    (<HTMLInputElement>document.getElementById("actualidad")).setAttribute('value','false');
+  }else{
+    (<HTMLInputElement>document.getElementById("actualidad")).setAttribute('value','true');
+  }
+  console.log("Actualidad: "+check);
+}
+
+verificarCheck(){
+  var check = (<HTMLInputElement>document.getElementById("actualidad")).checked;
+  return check
+}
 
 }

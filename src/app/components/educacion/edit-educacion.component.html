@@ -1,61 +1,131 @@
-<div class="container"  *ngIf="educacion">
-    <div class="">
-        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
-            <div class="row mb-4">
-                <!---->
-                <div class="col">
-                    <div class="form-outline">
-                        <input type="text" id="fechaInicio" name="fechaInicio" [(ngModel)]="educacion.fechaInicio" required
-                            class="form-control" />
-                        <label class="form-label" for="">Inicio de estudio</label>
+<section class="text-center text-white text-lg-start font-monospace bg-code">
+    <!--  -->
+    <div class="container py-4">
+        <div class="row g-0 align-items-center">
+            <div class="col-lg-7 mb-5 mb-lg-0 z-index-1">
+                <div class="card left-2 bg-darkTrans">
+                    <div class="card-body p-5 shadow-5 text-center">
+                        <h2 class="mb-5">Editalo!</h2>
+                        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                            <!-- Lluivia matrix -->
+                            <div id="" class="row bubujaForms">
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>1</p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>0</p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>1</p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p></p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>1</p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>1</p>
+                                </div>
+                            </div>
+                            <!-- -->
+                            <div class="row justify-content-between">
+                                <div class="col-md-5">
+                                    <div class="form-outline">
+                                        <input type="month" id="fechaInicio" name="fechaInicio" min="01-01-1800"
+                                            [(ngModel)]="educacion.fechaInicio" placeholder="Fecha de inicio"
+                                            class="form-control fst-italic p-sticky" />
+                                        <label class="form-label" for="">Inicio</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-outline">
+                                        <input type="month" id="fechaFin" name="fechaFin" name="fechaFin"
+                                            min="01-01-1800" [(ngModel)]="educacion.fechaFin"
+                                            placeholder="Fecha finalizada" class="form-control fst-italic p-sticky" />
+                                        <label class="form-label" for="">Fin</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Checkbox-->
+                            <div class="form-check d-flex justify-content-end mr-5 mb-4">
+                                <input class="form-check-input" type="checkbox" value="true" id="actualidad"
+                                    (click)="checkeoActual()">
+                                <label class="form-check-label ms-2" for="actualidad">
+                                    Actualidad
+                                </label>
+                            </div>
+
+                            <!-- nombre input -->
+                            <div class="form-outline mb-4">
+                                <input type="text" id="nombreEdu" name="nombreEdu" [(ngModel)]="educacion.nombreEdu"
+                                    placeholder="Cómo se llama?" class="form-control fst-italic p-sticky" />
+                                <label class="form-label" for="">Nombre de la Academia</label>
+                            </div>
+
+                            <!-- titulo input -->
+                            <div class="form-outline mb-4">
+                                <input type="text" id="tituloEdu" name="tituloEdu" [(ngModel)]="educacion.tituloEdu"
+                                    placeholder="De qué te recibes?" class="form-control fst-italic p-sticky" />
+                                <label class="form-label" for="">Titulo</label>
+                            </div>
+
+                            <div class="row justify-content-between">
+                                <div class="col-md-4 mb-4">
+                                    <div class="form-outline">
+                                        <input type="number" id="subNombreExp" name="subNombreExp"
+                                            [(ngModel)]="educacion.aprobadasEdu" placeholder="Cuántas vas?"
+                                            class="form-control fst-italic p-sticky" />
+                                        <label class="form-label" for="">Aprobadas</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="form-outline">
+                                        <input type="number" id="" name="promedio" [(ngModel)]="educacion.promedio"
+                                            placeholder="N,N" class="form-control fst-italic p-sticky" />
+                                        <label class="form-label" for="">Promedio</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- IMG input data-->
+                            <div class="d-none mb-4">
+                                <input type="text" 
+                                    class="form-control fst-italic p-sticky" placeholder="Opcional" />
+                                <label class="form-label" place>Imagen</label>
+                            </div>
+                            <!--IMG FILE-->
+                            <div class="form-outline mb-4">
+                                <input (change)="capturarFile($event)" type="file" accept=".jpg,.png" class="form-control fst-italic" id="imgSubir"
+                                id="imagen" name="imagen" [(ngModel)]="educacion.imagen" aria-describedby="imgSubir" aria-label="Cargar">
+                                    <label class="form-label" place>Imagen</label>
+                            </div>
+                            <div *ngIf="previsualizacion" class="mb-3">
+                                <img [src]="previsualizacion" alt="" width="100px" />
+                            </div>
+
+                            <!--  button -->
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-dark btn-editEdu btn-hover-gold btn-lg-block mb-4 p-sticky">
+                                    Editar educación
+                                </button>
+
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <!---->
-                <div class="col">
-                    <div class="form-outline">
-                        <input type="text" id="fechaFin" name="fechaFin" name="fechaFin" [(ngModel)]="educacion.fechaFin" required
-                            class="form-control" />
-                        <label class="form-label" for="">Fin de estudio</label>
-                    </div>
+            </div>
+
+            <div class="col-lg mb-5 mb-lg-0 bg-dark">
+                <div class="w-100 mx-phone-none rounded-4 shadow-4 rectangle-big-dark" alt="">
+
+                    <!-- <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg"  class="w-100 mx-phone-none rounded-4 shadow-4 h-100" alt=""/> -->
+                    <img src="./assets/images/education.jpg" class="w-100 mx-phone-none rounded-4 shadow-4 h-100 blur-2"
+                        alt="" />
                 </div>
+                <!-- src="https://wallpaperaccess.com/full/1772233.jpg" -->
             </div>
-
-            <!--  -->
-            <div class="form-outline mb-4">
-                <input type="text" id="nombreExp" name="nombreExp" [(ngModel)]="educacion.nombreEdu" required
-                    class="form-control" />
-                <label class="form-label" for="">Educacion</label>
-            </div>
-
-            <!--  -->
-            <div class="form-outline mb-4">
-                <input type="text" id="subNombreExp" name="subNombreExp" [(ngModel)]="educacion.tituloEdu" required
-                    class="form-control" />
-                <label class="form-label" for="">Titulo</label>
-            </div>
-            <!--  -->
-            <div class="form-outline mb-4">
-                <input type="number" id="subNombreExp" name="subNombreExp" [(ngModel)]="educacion.aprobadasEdu" required
-                    class="form-control" />
-                <label class="form-label" for="">Aprobadas</label>
-            </div>
-            <!--  -->
-            <div class="form-outline mb-4">
-                <input type="number" id="" name="promedio" [(ngModel)]="educacion.promedio" required
-                    class="form-control" />
-                <label class="form-label" for="">Promedio</label>
-            </div>
-            <!--  -->
-            <div class="form-outline mb-4">
-                <input type="text" id="" name="" [(ngModel)]="educacion.imagen" required
-                    class="form-control" />
-                <label class="form-label" for="">Imagen</label>
-            </div>
-
-
-            <!--  -->
-            <button type="submit" class="btn btn-primary btn-block mb-4">Editar</button>
-        </form>
-
+        </div>
     </div>
-</div>
+
+</section>
+<app-footer></app-footer>

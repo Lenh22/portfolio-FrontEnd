@@ -10,20 +10,20 @@
                             src="//argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1648503444/APLogo-20-20.png"
                             alt="argpprod" width="200px"></a>
                 </div>
-                <div id="centrado" class="col-md-4 fondo">
+                <div id="centrado" class="col-md-4 fondo pointer">
                     <a (click)="login()" *ngIf="!isLogged">
                         <span class="material-icons-round iconoUsuario" > 
                             <!-- data-bs-toggle="modal" data-bs-target="#login"  CON MODAL-->
                             account_circle
                         </span>
-                        <p>Iniciar sesion</p>
+                        <p class="font-monospace font-login">Iniciar sesion</p>
                     </a>
 
                     <a (click)="onLogOut()" *ngIf="isLogged">
                         <span class="material-icons-round iconoUsuario">
                             logout
                         </span>
-                        <p>Cerrar sesion</p>
+                        <p class="font-monospace font-login">Cerrar sesion</p>
                     </a>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                 <div id="saludo" class="col">
                     <i>H</i><i>o</i><i>l</i><i>a</i><i>,</i> <br> <i>s</i><i>o</i><i>y </i> <i>Len</i>
                     <h3>Desarrollador web</h3>
-                    <a href="#contactos"><button type="button" class="btn btn-secondary ">Contactos</button></a>
+                    <a href="#contactos"><button type="button" class="btn btn-secondary btn-contact">Contactos</button></a>
                 </div>
                 <div id="nubeLluvia" class="col">
                     <div class="text-center centrado-flex">

@@ -5,13 +5,15 @@ export class Proyecto {
     fechaInicioProj:string;
     fechaFinProj:string;
     imgProj:string = '';
+    linkProj:string ='';
 
-    constructor(nombre:string, descripcion:string, fechaInicio:string,fechaFin:string,img?:string){
+    constructor(nombre:string, descripcion:string, fechaInicio:string,fechaFin:string,img?:string,link?:string){
         this.nombreProj=nombre;
         this.descripcionProj=descripcion;
         this.fechaInicioProj=fechaInicio;
         this.fechaFinProj=fechaFin;
         this.imgProj=img;
+        this.linkProj=link;
     }
     public setNombreProj(variable:string){
         this.nombreProj = variable;
@@ -27,5 +29,8 @@ export class Proyecto {
     }
     public setImgProj(variable:string){
         this.imgProj = variable;
+    }
+    public setLinkProj(variable:string){
+        this.linkProj = variable;
     }
 }

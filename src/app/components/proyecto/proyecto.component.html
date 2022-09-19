@@ -1,40 +1,45 @@
 <div id="proyecto" class="background-alt padding-left">
     <div class="heading d-flex">
-        <h2 >Proyectos</h2>
-        <button type="button" class="btn btn-dark" routerLink="/nuevoproy" *ngIf="isLogged">
-            <span class="material-icons-round">
+        <h2>Proyectos</h2>
+        <!--btn create-->
+        <div type="button" class="btn-default btn-create d-flex" routerLink="/nuevoproy" *ngIf="isLogged;">
+            <span class="material-icons-round fs-1 rounded-circle align-items-center">
                 add_circle
             </span>
-         </button>
+        </div>
     </div>
-    <div class="container px-4 ">
-        <div class="row g-0">
-            <div class="col" *ngFor="let project of proyectoBack">
-                <div class="p-3 border bg-light mb-3">
-                    <div id="configProyecto" class="d-flex justify-content-between">
-                        <div class="ps-2 col-md-6">
-                            <img src="./assets/images/{{project.imgProj}}"
+    <div class="container-fluid">
+        <div class="row g-0 justify-content-between">
+            <div class="col-md-5 bg-light border mb-3" *ngFor="let project of proyectoBack">
+                <div class="p-3">
+                    <div id="" class="d-flex justify-content-between configProyecto">
+                        <div class="ps-2 col-md-9">
+                            <img src="{{project.imgProj}}"
                                 class="border border-secondary border-3 rounded-circles float-start" alt="..."
                                 width="50px" height="50px">
-                            <div class="d-flex">
+                            <div class="d-flex justify-content-between mr-0">
                                 <h3 class="ps-2 row">{{project.nombreProj}}</h3>
-                                <div *ngIf="isLogged;">
-                                    <button class="btn btn-primary" routerLink="/editproy/{{project.id}}">
-                                        <span class="material-icons-round">
+                                <div class="d-flex" *ngIf="isLogged;">
+                                    <!--btn edit-->
+                                    <div type="button" class="btn-default btn-edit d-flex"
+                                        routerLink="/editproy/{{project.id}}">
+                                        <span class="material-icons-round fs-1 rounded-circle align-items-center">
                                             drive_file_rename_outline
                                         </span>
-                                    </button>
-                                    <button class="btn btn-danger" (click)="delete(project.id)">
-                                        <span class="material-icons-round">
-                                            delete
+                                    </div>
+                                    <!--btn remove-->
+                                    <div type="button" class="btn-default btn-delete d-flex"
+                                        (click)="delete(project.id)">
+                                        <span class="material-icons-round fs-1 rounded-circle align-items-center">
+                                            remove_circle
                                         </span>
-                                    </button>
+                                    </div>
                                 </div>
                             </div>
                             <span class="education-date row ps-2">{{project.fechaInicioProj}} -
                                 {{project.fechaFinProj}}</span>
                         </div>
-                        <button type="button" class="btn btn-secondary ">Mas Informacion</button>
+                        <a href="//{{project.linkProj}}"  class="btn btn-secondary h-min">Más</a>
                     </div>
                     <div class="p-3">
                         {{project.descripcionProj}}

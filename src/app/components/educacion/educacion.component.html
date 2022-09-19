@@ -1,11 +1,11 @@
 <div id="education" class="padding-left background-alt">
     <div class="heading d-flex">
-        <h2 >Educación</h2>
-        <button type="button" class="btn btn-dark" routerLink="/nuevaedu" *ngIf="isLogged">
-            <span class="material-icons-round">
+        <h2>Educación</h2>
+        <div type="button" class="btn-default btn-create d-flex" routerLink="/nuevaedu" *ngIf="isLogged;">
+            <span class="material-icons-round fs-1 rounded-circle align-items-center">
                 add_circle
             </span>
-         </button>
+        </div>
     </div>
     <div>
 
@@ -15,32 +15,39 @@
                 <div class="col-12 col-md-8">
                     <div class="row">
                         <!-- Directiva para recorrer en el array del json education (IngFor) -->
-                        <div class="col-12 p-1" *ngFor="let edu of educacionBack"> 
+                        <div class="col-12 p-1" *ngFor="let edu of educacionBack">
                             <article class="card h-100">
                                 <div class="card-body">
                                     <div class="descriptionEducation">
-                                        <div class="d-flex">
+                                        <div class="d-flex justify-content-between">
 
                                             <div class="grid-centrado">
-                                                <img src="./assets/images/{{edu.imagen}}"
-                                                class="border-3 rounded-circles float-start" alt="..." width="50px"
-                                                height="50px">
+                                                <img *ngIf="edu.imagen!=''" src="{{edu.imagen}}"
+                                                    class="border-3 rounded-circles float-start celu-img-jus-s-start" alt="..." width="50px"
+                                                    height="50px">
                                                 <div class="ps-2">
                                                     <h3>{{edu.nombreEdu}}</h3>
-                                                    <span class="education-date">{{edu.fechaInicio}} - {{edu.fechaFin}}</span>
+                                                    <span class="education-date">{{edu.fechaInicio}} |
+                                                        {{edu.fechaFin}}</span>
                                                 </div>
                                             </div>
-                                            <div *ngIf="isLogged">
-                                                <button class="btn btn-primary" routerLink="/editedu/{{edu.id}}">
-                                                    <span class="material-icons-round">
+                                            <div *ngIf="isLogged" class="d-flex">
+                                                <!--btn edit-->
+                                                <div type="button" class="btn-default btn-edit d-flex"
+                                                    routerLink="/editedu/{{edu.id}}">
+                                                    <span
+                                                        class="material-icons-round fs-1 rounded-circle align-items-center">
                                                         drive_file_rename_outline
                                                     </span>
-                                                </button>
-                                                <button class="btn btn-danger" (click)="deleteEdu(edu.id)">
-                                                    <span class="material-icons-round">
-                                                        delete
+                                                </div>
+                                                <!--btn remove-->
+                                                <div type="button" class="btn-default btn-delete d-flex"
+                                                    (click)="deleteEdu(edu.id)">
+                                                    <span
+                                                        class="material-icons-round fs-1 rounded-circle align-items-center">
+                                                        remove_circle
                                                     </span>
-                                                </button>
+                                                </div>
                                             </div>
                                         </div>
                                         <h4>{{edu.tituloEdu}}</h4>
@@ -66,56 +73,80 @@
                                 <div id="cursos" class="d-flex">
                                     <div class="d-flex">
                                         <h4>Cursos</h4>
-                                        <button  type="button" class="btn btn-dark" routerLink="/nuevocurso" *ngIf="isLogged">
-                                            <span class="material-icons-round">
+                                        <div type="button" class="btn-default btn-create d-flex"
+                                            routerLink="/nuevocurso" *ngIf="isLogged;">
+                                            <span class="material-icons-round fs-2 rounded-circle align-items-center">
                                                 add_circle
                                             </span>
-                                         </button>
+                                        </div>
                                     </div>
                                 </div>
                                 <ul id="listaCursos">
-                                    <li *ngFor="let course of cursoBack"> <!--Curso-->
-                                        <a target="_blank"
-                                            [href]="course.linkCurso">
-                                            {{course.tituloCurso}}
-                                        </a> | {{course.nombreCurso}}
-                                        <button *ngIf="isLogged" class="btn btn-primary" routerLink="/editcurso/{{course.id}}">
-                                            <span class="material-icons-round">
-                                                drive_file_rename_outline
-                                            </span>
-                                        </button>
-                                        <button *ngIf="isLogged" class="btn btn-danger" (click)="deleteCurso(course.id)">
-                                            <span class="material-icons-round">
-                                                delete
-                                            </span>
-                                        </button>
+                                    <li *ngFor="let course of cursoBack">
+                                        <!--Curso-->
+                                        <div class="d-flex row list">
+                                            <div class="col-md-12 col-sm-8">
+                                                <a target="_blank" href="//{{course.linkCurso}}">
+                                                    {{course.tituloCurso}}
+                                                </a> | {{course.nombreCurso}}
+                                            </div>
+                                            <div class="d-flex col justify-content-end">
+                                                <div type="button" class="btn-default btn-edit d-flex"
+                                                    routerLink="/editcurso/{{course.id}}" *ngIf="isLogged">
+                                                    <span
+                                                        class="material-icons-round fs-3 rounded-circle align-items-center">
+                                                        drive_file_rename_outline
+                                                    </span>
+                                                </div>
+                                                <div type="button" class="btn-default btn-delete d-flex"
+                                                    (click)="deleteCurso(course.id)" *ngIf="isLogged">
+                                                    <span
+                                                        class="material-icons-round fs-3 rounded-circle align-items-center">
+                                                        remove_circle
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </li>
                                 </ul>
-                                <div id="idiomas" class="d-flex">  <!--Idioma-->
+                                <div id="idiomas" class="d-flex">
+                                    <!--Idioma-->
                                     <div class="d-flex">
                                         <h4>Idiomas</h4>
-                                        <button type="button" class="btn btn-dark" routerLink="/nuevoidioma" *ngIf="isLogged">
-                                            <span class="material-icons-round">
+                                        <!--btn create-->
+                                        <div type="button" class="btn-default btn-create d-flex"
+                                            routerLink="/nuevoidioma" *ngIf="isLogged;">
+                                            <span class="material-icons-round fs-2 rounded-circle align-items-center">
                                                 add_circle
                                             </span>
-                                         </button>
+                                        </div>
                                     </div>
                                 </div>
                                 <ul id="listaIdiomas">
                                     <li *ngFor="let idiom of idiomaBack">
-                                        {{idiom.nombreIdi}} | {{idiom.nivelIdi}}
-                                        <button *ngIf="isLogged" class="btn btn-primary" routerLink="/editidioma/{{idiom.id}}">
-                                            <span class="material-icons-round">
-                                                drive_file_rename_outline
-                                            </span>
-                                        </button>
-                                        <button *ngIf="isLogged" class="btn btn-danger" (click)="deleteIdioma(idiom.id)">
-                                            <span class="material-icons-round">
-                                                delete
-                                            </span>
-                                        </button>
+                                        <div class="d-flex row list">
+                                            <div class="col-sm-8">
+                                                {{idiom.nombreIdi}} | {{idiom.nivelIdi}}
+                                            </div>
+                                            <div class="d-flex col justify-content-end">
+                                                <div type="button" class="btn-default btn-edit d-flex"
+                                                    routerLink="/editidioma/{{idiom.id}}" *ngIf="isLogged">
+                                                    <span
+                                                        class="material-icons-round fs-3 rounded-circle align-items-center">
+                                                        drive_file_rename_outline
+                                                    </span>
+                                                </div>
+                                                <div type="button" class="btn-default btn-delete d-flex"
+                                                    (click)="deleteIdioma(idiom.id)" *ngIf="isLogged">
+                                                    <span
+                                                        class="material-icons-round fs-3 rounded-circle align-items-center">
+                                                        remove_circle
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </li>
-                                    
+
                                 </ul>
                             </div>
                         </div>

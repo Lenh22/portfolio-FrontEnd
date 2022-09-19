@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AboutMe } from 'src/app/model/about-me';
 import { AboutMeService } from 'src/app/service/about-me.service';
@@ -10,8 +11,11 @@ import { AboutMeService } from 'src/app/service/about-me.service';
 })
 export class EditAboutComponent implements OnInit {
   about: AboutMe =null;
-  constructor(private aboutService:AboutMeService, private activateRouter:ActivatedRoute,
-     private router:Router) { }
+  constructor(private aboutService:AboutMeService,
+     private activateRouter:ActivatedRoute,
+     private router:Router,
+     private sanitizer: DomSanitizer
+     ) { }
 
   ngOnInit(): void {
     const id = this.activateRouter.snapshot.params['id'];
@@ -27,6 +31,9 @@ export class EditAboutComponent implements OnInit {
 
   onUpdate(): void {
     const id = this.activateRouter.snapshot.params['id'];
+    if(this.previsualizacion){//verifica si hay imagen cargado
+      this.subirArchivo();
+    }
     this.aboutService.update(id,this.about).subscribe(data =>{
       this.router.navigate(['']);
     },err =>{
@@ -34,4 +41,49 @@ export class EditAboutComponent implements OnInit {
       this.router.navigate(['update']);
     })
   }
+  
+//Para archivos 
+public previsualizacion:string;
+
+capturarFile(event:any){
+  const archivoCapturado = event.target.files[0];
+  this.extraerBase64(archivoCapturado).then((image:any) =>{
+    this.previsualizacion=image.base;
+    console.log(image);
+  });
+  console.log(archivoCapturado);
+}
+extraerBase64 = async ($event:any) => new Promise((resolve,reject)=>{
+  try{
+    const unsafeImg = window.URL.createObjectURL($event);
+    const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
+    const reader = new FileReader();
+    reader.readAsDataURL($event); 
+    reader.onload = () => {
+      resolve({
+        blob:$event,
+        image,
+        base:reader.result
+      });
+    };
+    reader.onerror = error =>{
+      resolve({
+        blob:$event,
+        image,
+        base:null
+      });
+    };
+
+  }catch(e){
+    return null;
+  }
+})
+
+subirArchivo():any{
+  try{
+    this.about.imagenMi = this.previsualizacion;
+  } catch(e){
+    alert("No se pudo subir la imagen");
+  }
+}
 }

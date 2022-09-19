@@ -1,0 +1,14 @@
+.pointer{
+    cursor: pointer;
+}
+.font-login{
+    transition: .2s;
+}
+.font-login:hover{
+    color: dimgray;
+}
+.btn-contact:hover{
+    background-color: #6e6124;
+    color: white;
+    border-color: white;
+}

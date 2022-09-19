@@ -1,33 +1,91 @@
-<p>new-skill works!</p>
-<div class="container" >
-    <div class="">
-        <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
-            <!--  -->
-            <div class="form-outline mb-4">
-                <input type="text" id="nombreHab" name="nombreHab" [(ngModel)]="nombreHab" required
-                    class="form-control" />
-                <label class="form-label" for="">Nombre</label>
+<section class="text-center text-white text-lg-start font-monospace bg-code">
+    <!--  -->
+    <div class="container py-4">
+        <div class="row g-0 align-items-center">
+            <div class="col-lg-7 mb-5 mb-lg-0 z-index-1">
+                <div class="card left-2 bg-darkTrans">
+                    <div class="card-body p-5 shadow-5 text-center">
+                        <h2 class="mb-5">Agrega una nueva habilidad!</h2>
+                        <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                            <!-- Lluivia matrix -->
+                            <div id="" class="row bubujaForms">
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>1</p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>0</p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>1</p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p></p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>1</p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>1</p>
+                                </div>
+                            </div>
+                            <!-- -->
+                            <div class="row justify-content-between">
+                                <div class="col-md-5">
+                            <!-- nombre input -->
+                            <div class="form-outline mb-4">
+                                <input type="text" id="nombreHab" name="nombreHab" [(ngModel)]="nombreHab" 
+                                    placeholder="Cómo se llama?" class="form-control fst-italic p-sticky" />
+                                <label class="form-label" for="">Nombre</label>
+                            </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-outline">
+                                        <input type="number" id="nivelHab" name="nivelHab" min="0" max="100"
+                                        [(ngModel)]="nivelHab" placeholder="Del 0 al 100"
+                                            class="form-control fst-italic p-sticky" />
+                                        <label class="form-label" for="">Nivel</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- IMG input data-->
+                            <div class="d-none mb-4">
+                                <input type="text" 
+                                    class="form-control fst-italic p-sticky" placeholder="Opcional" />
+                                <label class="form-label" place>Imagen</label>
+                            </div>
+                            <!--IMG FILE-->
+                            <div class="form-outline mb-4">
+                                <input (change)="capturarFile($event)" type="file" accept=".jpg,.png" class="form-control fst-italic" id="imgSubir"
+                                id="imgHab" name="imgHab" [(ngModel)]="imgHab" aria-describedby="imgSubir" aria-label="Cargar">
+                                    <label class="form-label" place>Imagen</label>
+                            </div>
+                            <div *ngIf="previsualizacion" class="mb-3">
+                                <img [src]="previsualizacion" alt="" width="100px" />
+                            </div>
+
+                            <!--  button -->
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-dark btn-newHab btn-hover-gold btn-lg-block mb-4 p-sticky">
+                                    Editar habilidad
+                                </button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
 
-            <!--  -->
-            <div class="form-outline mb-4">
-                <input type="number" id="nivelHab" name="nivelHab" [(ngModel)]="nivelHab" required
-                    class="form-control" />
-                <label class="form-label" for="">Nivel</label>
+            <div class="col-lg mb-5 mb-lg-0 bg-dark">
+                <div class="w-100 mx-phone-none rounded-4 shadow-4 rectangle-mid-dark" alt="">
+
+                    <!-- <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg"  class="w-100 mx-phone-none rounded-4 shadow-4 h-100" alt=""/> -->
+                    <img src="./assets/images/skills.jpg" class="w-100 mx-phone-none rounded-4 shadow-4 h-100 blur-2"
+                        alt="" />
+                </div>
+                <!-- src="https://wallpaperaccess.com/full/1772233.jpg" -->
             </div>
-            <!--  -->
-            <div class="form-outline mb-4">
-                <input type="text" id="imgHab" name="imgHab" [(ngModel)]="imgHab" required
-                    class="form-control" />
-                <label class="form-label" for="">Imagen</label>
-            </div>
-
-
-            <!--  -->
-            <button type="submit" class="btn btn-primary btn-block mb-4">Crear</button>
-        </form>
-
+        </div>
     </div>
-</div>
 
-
+</section>
+<app-footer></app-footer>

@@ -22,6 +22,9 @@ export class NewExpComponent implements OnInit {
 
   onCreate():void{
     const exp = new Experiencia(this.nombreExp,this.descripcionExp,this.subNombreExp,this.fechaInicio,this.fechaFin); 
+    if(this.verificarCheck()){ //verifica si esta checkeado
+      exp.setFechaFin("Actualidad");
+    }
     this.experienciaService.save(exp).subscribe(
     data=> {
     alert('Experiencia creada');
@@ -33,5 +36,19 @@ export class NewExpComponent implements OnInit {
 
   );
   }
+//check
+checkeoActual(){
+  var check = this.verificarCheck();
+  if(check== true){
+    (<HTMLInputElement>document.getElementById("actualidad")).setAttribute('value','false');
+  }else{
+    (<HTMLInputElement>document.getElementById("actualidad")).setAttribute('value','true');
+  }
+  console.log("Actualidad: "+check);
+}
 
+verificarCheck(){
+  var check = (<HTMLInputElement>document.getElementById("actualidad")).checked;
+  return check
+}
 }

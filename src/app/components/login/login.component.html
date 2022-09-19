@@ -1,8 +1,8 @@
-<section class="vh-100 gradient-custom">
+<section class="vh-100 gradient-custom  bg-code pos-fixed">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+        <div class="card bg-semiTrans text-white" style="border-radius: 1rem;">
 
           <div class="card-body p-5 text-center">
             <!-- <div class="logoYTexto text-center"><img  src="./assets/images/nubeB.png" class="" alt="Nube" class="img-fluid rounded mx-auto" ></div> -->
@@ -14,7 +14,7 @@
               <div class="form-outline form-white mb-4">
                 <label class="form-label" for="email">Usuario</label>
                 <input type="text" id="nombreUsuario" name="nombreUsuario" class="form-control form-control-lg"
-                  placeholder="Usuario" [(ngModel)]="nombreUsuario" />
+                  placeholder="Usuario" [(ngModel)]="nombreUsuario"/>
               </div>
               <div class="form-outline form-white mb-4">
                 <label class="form-label" for="idpassword">Contraseña</label>
@@ -22,7 +22,6 @@
                   class="form-control form-control-lg" placeholder="Contraseña" [(ngModel)]="password" />
               </div>
               <button class="btn btn-outline-light btn-lg px-5" type="submit">Ingresar</button>
-
             </form>
 
             <div>

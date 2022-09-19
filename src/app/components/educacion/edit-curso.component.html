@@ -1,30 +1,86 @@
-<p>edit-curso works!</p>
-<div class="container"  *ngIf="curso">
-    <div class="">
-        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+<section class="text-center text-white text-lg-start font-monospace bg-code">
+    <!--  -->
+    <div class="container py-4">
+        <div class="row g-0 align-items-center">
+            <div class="col-lg-7 mb-5 mb-lg-0 z-index-1">
+                <div class="card left-2 bg-darkTrans">
+                    <div class="card-body p-5 shadow-5 text-center">
+                        <h2 class="mb-5">Editalo tu curso!</h2>
+                        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                            <!-- Lluivia matrix -->
+                            <div id="" class="row bubujaForms">
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>1</p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>0</p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>1</p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p></p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>1</p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>1</p>
+                                </div>
+                            </div>
+                            <!-- -->
+                            <div class="row justify-content-between">
+                                <div class="col-md-5">
+                                    <!--  input -->
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="nombreExp" name="nombreExp"
+                                        [(ngModel)]="curso.nombreCurso" placeholder="Cómo se llama?"
+                                            class="form-control fst-italic p-sticky" />
+                                        <label class="form-label" for="">Nombre del curso</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <!--  input -->
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="tituloCurso" name="tituloCurso"
+                                        [(ngModel)]="curso.tituloCurso" placeholder="De titulo recibes?"
+                                            class="form-control fst-italic p-sticky" />
+                                        <label class="form-label" for="">Titulo </label>
+                                    </div>
+                                </div>
+                            </div>
 
-            <!--  -->
-            <div class="form-outline mb-4">
-                <input type="text" id="nombreCurso" name="nombreCurso" [(ngModel)]="curso.nombreCurso" required
-                    class="form-control" />
-                <label class="form-label" for="">Nombre del curso</label>
+                            <!-- input -->
+                            <div class="form-outline mb-4">
+                                <input type="text" id="linkCurso" name="linkCurso" [(ngModel)]="curso.linkCurso"
+                                    placeholder="Opcional" class="form-control fst-italic p-sticky" />
+                                <label class="form-label" for="">Link del curso</label>
+                            </div>
+
+
+                            <!--  button -->
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-dark btn-editCur btn-hover-gold btn-lg-block mb-4">
+                                    Editar curso
+                                </button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
 
-            <!--  -->
-            <div class="form-outline mb-4">
-                <input type="text" id="tituloCurso" name="tituloCurso" [(ngModel)]="curso.tituloCurso" required
-                    class="form-control" />
-                <label class="form-label" for="">Titulo</label>
-            </div>
-            <!--  -->
-            <div class="form-outline mb-4">
-                <input type="text" id="linkCurso" name="linkCurso" [(ngModel)]="curso.linkCurso" required
-                    class="form-control" />
-                <label class="form-label" for="">Link de certificado (opcional)</label>
-            </div>
-            <!--  -->
-            <button type="submit" class="btn btn-primary btn-block mb-4">Editar</button>
-        </form>
+            <div class="col-lg mb-5 mb-lg-0 bg-dark">
+                <div class="container-fluid w-100 mx-phone-none rounded-4 shadow-4 rectangle-mid-dark" alt="">
 
+                    <!-- <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg"  class="w-100 mx-phone-none rounded-4 shadow-4 h-100" alt=""/> -->
+                    <img src="./assets/images/education.jpg" class="w-100 mx-phone-none rounded-4 shadow-4 h-100 blur-2"
+                        alt="" />
+                </div>
+                <!-- src="https://wallpaperaccess.com/full/1772233.jpg" -->
+            </div>
+        </div>
     </div>
-</div>
+
+</section>
+<app-footer></app-footer>

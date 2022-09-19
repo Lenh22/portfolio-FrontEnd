@@ -1,0 +1,85 @@
+.bubujaForm {
+    display: flex;
+    position:relative;
+    -webkit-animation: bubujaForms 2s linear infinite;
+            animation: bubujaForms 2s linear infinite;
+  }
+  
+  .bubujaForm:nth-child(1) {
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-delay: 4s;
+            animation-delay: 4s;
+  }
+  
+  .bubujaForm:nth-child(2) {
+    -webkit-animation-duration: 4s;
+            animation-duration: 4s;
+    -webkit-animation-delay: 4s;
+            animation-delay: 4s;
+  }
+  
+  .bubujaForm:nth-child(3) {
+    -webkit-animation-duration: 4s;
+            animation-duration: 4s;
+    -webkit-animation-delay: 1s;
+            animation-delay: 0s;
+  }
+  
+  .bubujaForm:nth-child(4) {
+    -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+    -webkit-animation-delay: 2s;
+            animation-delay: 3s;
+  }
+  
+  .bubujaForm:nth-child(5) {
+    -webkit-animation-duration: 5s;
+            animation-duration: 5s;
+    -webkit-animation-delay: 0Ss;
+            animation-delay: 0s;
+  }
+  
+
+@-webkit-keyframes bubujaForms {
+    0% {
+      top: 0;
+      opacity: 0;
+    }  
+    100% {
+      top: 100px;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes bubujaForms {
+    0% {
+      top: 0px;
+      opacity: 100%;
+    }
+   
+    100% {
+      top: 100px;
+      opacity: 0;
+    }
+  }
+
+  .btn-editIdi{
+    color:#ffffff;
+    background-color: darkslateblue;
+    align-items: center!important;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s;
+    }
+
+    .btn-editIdi:hover{
+      align-items: center!important;
+      text-align: center;
+      cursor: pointer;
+      transition: .5s;
+      }
+    .btn-hover-gold:hover{
+      color:white;
+      background-color: #6e6124;
+    }

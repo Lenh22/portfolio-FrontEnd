@@ -9,8 +9,8 @@ import { IdiomaService } from 'src/app/service/idioma.service';
   styleUrls: ['./new-idioma.component.css']
 })
 export class NewIdiomaComponent implements OnInit {
-  nombreIdi:string;
-  nivelIdi:string;
+  nombreIdi:string='';
+  nivelIdi:string='';
   constructor(private idiomaService:IdiomaService, private router:Router) { }
 
   ngOnInit(): void {
@@ -18,7 +18,8 @@ export class NewIdiomaComponent implements OnInit {
 
   onCreate():void{
     var idioma = new Idioma(this.nombreIdi,this.nivelIdi);
-
+    idioma.setNombreId(this.nombreIdi);
+    idioma.setNivelIdi(this.nivelIdi);
     this.idiomaService.save(idioma).subscribe(
       data=>{
       alert("Idioma creado");

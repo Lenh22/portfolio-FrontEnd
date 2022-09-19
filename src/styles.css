@@ -291,6 +291,29 @@ header{
   text-align: center;
   left: 7px;
   top: 7px;
+  transition: 2s;
+}
+.circle:hover{
+  background-color:#6e6124;
+}
+.rectangle-big-dark{
+  position: inherit;
+  width: 33em;
+  height: 55rem;
+  display: block;
+}
+.rectangle-mid-dark{
+  position: inherit;
+  max-height: 100%;
+  width: 16em;
+  height: 36em;
+  display: block;
+}
+.rectangle-sm-dark{
+  position: inherit;
+  width: 8em;
+  height: 13rem;
+  display: block;
 }
 .vtimeline-date {
   width: 140px;
@@ -350,7 +373,7 @@ header{
   .fotoPerfil{
     position: relative;
       width: 8rem;
-      height: 120px;
+      height: 8rem;
       border-radius: 50%;
       float: right;
       z-index: 9;
@@ -379,7 +402,7 @@ header{
 .rounded-circles:hover{
   border-radius: 0%;
 }
-#configProyecto>button{
+.configProyecto>button{
   width: 10em;
   height:3em;
 }
@@ -407,6 +430,39 @@ transition:1s;
 .barraHab{
   height: 29px;
 }
+
+.bg-code{
+  background-image:url(./assets/images/code-wallpaper-14.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+.bg-semiTrans{
+  background: #0000007a;
+}
+
+.bg-darkTrans{
+  background: hsla(0, 8%, 18%, 0.55);
+  backdrop-filter: blur(30px);
+}
+
+.cascading-right {
+  margin-right: -50px;
+}
+.d-list-item{
+  display: list-item;
+}
+.bg-size-cover{
+  background-size:cover ;
+  background-repeat: no-repeat;
+}
+.bg-size-100{
+  background-size:100%;
+}
+.bg-pos-center{
+  background-position: center;
+}
+
+
 /*=========================== Animacion============================== */
 .barraHab{
   animation-name: barra;
@@ -533,11 +589,73 @@ transition:1s;
   100%{opacity: 1;}
 }
 
+.btn-default{
+border-radius: 50%!important;
+font-size: 2.5em;
+margin-bottom: 0.5rem;
+margin-right: .5rem;
+margin-left: .5rem;
+color:#6e6124;
+align-items: center!important;
+text-align: center;
+cursor: pointer;
+transition: .5s;
+}
 
+.btn-create:hover{
+  color: darkcyan;
+  /* border-style: dotted; */
+  transition: .5s;
+}
+.btn-edit:hover{
+  transition: .5s;
+  color: darkslateblue;
+}
+
+.btn-delete:hover{
+  color:brown;
+  /* border-style: dotted; */
+  transition: .5s;
+  
+}
+.p-sticky{
+  position: sticky;
+}
+.p-absolute{
+  position: absolute;
+}
+.left-2{
+  left: 2rem;
+}
+.blur-1{
+  filter:blur(1px);
+}
+.blur-2{
+  filter:blur(2px);
+}
+.z-index{
+  z-index:1;
+}
+.z-index-1{
+  z-index:10;
+}
+.z-index-2{
+  z-index:20;
+}
+.h-min{
+  height: min-content;
+}
 
 
 /*==================Celular==================================*/
 @media screen and (max-width:767px) {
+
+  .mx-phone-none{
+    display: none!important;
+  }
+  .cascading-right {
+    margin-right: 0;
+  }
   .padding-left{
     padding-left: 4.5em;
     padding-right: 1em;
@@ -596,7 +714,7 @@ transition:1s;
   }
   #listaIdiomas{
     font-family:sans-serif;
-    text-align:center;
+    text-align:start;
     list-style: none;
     padding:0px;
   }
@@ -611,16 +729,19 @@ transition:1s;
   .grid-centrado h4{
     padding:5em;
   }
-  #configProyecto{
+  .configProyecto{
     display: block !important;;
     justify-items: center;
   }
-  #configProyecto>button{
+  .configProyecto>button{
     height: auto;
     width: auto;
     margin-top: 1em;
     margin-left: 1em;
     text-align: center;
+  }
+  .celular-none{
+    display: none;
   }
 }
 /* =========Horizontal=========== */
@@ -650,6 +771,10 @@ transition:1s;
   }
   .iconoIzq{
     font-size: 20px;
+  }
+
+  .tablet-none{
+    display: none;
   }
 
 }

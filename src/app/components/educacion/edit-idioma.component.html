@@ -1,25 +1,83 @@
-<p>edit-idioma works!</p>
-<div class="container"  *ngIf="idioma">
-    <div class="">
-        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
-            <!--  -->
-            <div class="form-outline mb-4">
-                <input type="text" id="nombreIdi" name="nombreIdi" [(ngModel)]="idioma.nombreIdi" required
-                    class="form-control" />
-                <label class="form-label" for="">Idioma</label>
+<section class="text-center text-white text-lg-start font-monospace bg-code">
+    <!--  -->
+    <div class="container py-4">
+        <div class="row g-0 align-items-center">
+            <div class="col-lg-7 mb-5 mb-lg-0 z-index-1">
+                <div class="card left-2 bg-darkTrans">
+                    <div class="card-body p-5 shadow-5 text-center">
+                        <h2 class="mb-5">Editalo!</h2>
+                        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                            <!-- Lluivia matrix -->
+                            <div id="" class="row bubujaForms">
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>1</p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>0</p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>1</p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p></p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>1</p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>1</p>
+                                </div>
+                            </div>
+                            <!-- -->
+                            <div class="row justify-content-between">
+                                <div class="col-md-5">
+                                    <!-- -->
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="nombreIdi" name="nombreIdi"
+                                            [(ngModel)]="idioma.nombreIdi" placeholder="Cómo se llama?"
+                                            class="form-control fst-italic p-sticky" />
+                                        <label class="form-label" for="">Nombre del idioma</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <!-- -->
+                                    <div class="form-outline mb-4">
+                                        <!-- <input type="text" placeholder="Cómo se llama?" class="form-control fst-italic p-sticky" /> -->
+                                        <select id="nivelIdi" name="nivelIdi" [(ngModel)]="idioma.nivelIdi" class="form-select fst-italic p-sticky" aria-label="Que tanto sabes?"
+                                            aria-placeholder="Que tanto sabes?">
+                                            <option value="Básico">Básico</option>
+                                            <option value="Intermedio">Intermedio</option>
+                                            <option value="Experto">Experto</option>
+                                            <option value="Nativo">Nativo</option>
+                                        </select>
+                                        <label class="form-label" for="">Nivel</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--  button -->
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-dark btn-editIdi btn-hover-gold btn-lg-block mb-4 p-sticky">
+                                    Editar idioma
+                                </button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
 
-            <!--  -->
-            <div class="form-outline mb-4">
-                <input type="text" id="nivelIdi" name="nivelIdi" [(ngModel)]="idioma.nivelIdi" required
-                    class="form-control" />
-                <label class="form-label" for="">Nivel</label>
+            <div class="col-lg mb-5 mb-lg-0 bg-dark">
+                <div class="w-100 mx-phone-none rounded-4 shadow-4 rectangle-big-dark" alt="">
+
+                    <!-- <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg"  class="w-100 mx-phone-none rounded-4 shadow-4 h-100" alt=""/> -->
+                    <img src="./assets/images/education.jpg" class="w-100 mx-phone-none rounded-4 shadow-4 h-100 blur-2"
+                        alt="" />
+                </div>
+                <!-- src="https://wallpaperaccess.com/full/1772233.jpg" -->
             </div>
-
-            <!--  -->
-            <button type="submit" class="btn btn-primary btn-block mb-4">Editar</button>
-        </form>
-
+        </div>
     </div>
-</div>
 
+</section>
+<app-footer></app-footer>

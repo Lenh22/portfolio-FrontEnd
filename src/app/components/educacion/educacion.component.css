@@ -1,0 +1,18 @@
+#education h2 {
+    color: #374054;
+}
+
+.list{
+    justify-content: end;
+    text-align: start;
+}
+
+@media screen and (max-width:767px) {
+    .list{
+        justify-content: start;
+        text-align: start;
+    } 
+    .celu-img-jus-s-start{
+        justify-self: flex-start;
+    }
+}

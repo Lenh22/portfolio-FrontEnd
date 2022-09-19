@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Route, Router } from '@angular/router';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionService } from 'src/app/service/educacion.service';
@@ -17,7 +18,7 @@ export class NewEducacionComponent implements OnInit {
   promedio:string='';
   imagen?:string='';
   
-  constructor(private eduService:EducacionService, private router:Router) { }
+  constructor(private eduService:EducacionService, private router:Router,private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
   }
@@ -31,6 +32,12 @@ export class NewEducacionComponent implements OnInit {
     educacion.setAprobadasEdu(this.aprobadasEdu);
     educacion.setPromedio(this.promedio);
     educacion.setImagen(this.imagen);
+    if(this.verificarCheck()){ //verifica si esta checkeado
+      educacion.setFechaFin("Actualidad");
+    }
+    if(this.previsualizacion){//verifica si hay imagen cargado
+      educacion.setImagen(this.previsualizacion);
+    }
     this.eduService.save(educacion).subscribe(
       data=>{
       alert("Educacion creada");
@@ -43,5 +50,57 @@ export class NewEducacionComponent implements OnInit {
     }
     );
   }
+//check
+  checkeoActual(){
+    var check = this.verificarCheck();
+    if(check== true){
+      (<HTMLInputElement>document.getElementById("actualidad")).setAttribute('value','false');
+    }else{
+      (<HTMLInputElement>document.getElementById("actualidad")).setAttribute('value','true');
+    }
+    console.log("Actualidad: "+check);
+  }
+
+  verificarCheck(){
+    var check = (<HTMLInputElement>document.getElementById("actualidad")).checked;
+    return check
+  }
+
+  //Para archivos 
+  public previsualizacion:string;
+
+  capturarFile(event:any){
+    const archivoCapturado = event.target.files[0];
+    this.extraerBase64(archivoCapturado).then((image:any) =>{
+      this.previsualizacion=image.base;
+      console.log(image);
+    });
+    console.log(archivoCapturado);
+  }
+  extraerBase64 = async ($event:any) => new Promise((resolve,reject)=>{
+    try{
+      const unsafeImg = window.URL.createObjectURL($event);
+      const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
+      const reader = new FileReader();
+      reader.readAsDataURL($event); 
+      reader.onload = () => {
+        resolve({
+          blob:$event,
+          image,
+          base:reader.result
+        });
+      };
+      reader.onerror = error =>{
+        resolve({
+          blob:$event,
+          image,
+          base:null
+        });
+      };
+
+    }catch(e){
+      return null;
+    }
+  })
 
 }

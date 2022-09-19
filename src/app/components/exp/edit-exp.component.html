@@ -1,43 +1,107 @@
-<div class="container" *ngIf="expEdit">
-    <div class="">
-        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
-            <div class="row mb-4">
-                <!--Inicio-->
-                <div class="col">
-                    <div class="form-outline">
-                        <input type="text" id="fechaInicio" name="fechaInicio" [(ngModel)]="expEdit.fechaInicio" required class="form-control"  />
-                        <label class="form-label" for="">Inicio</label>
+<section class="text-center text-white text-lg-start font-monospace bg-code">
+    <!--  -->
+    <div class="container py-4">
+        <div class="row g-0 align-items-center">
+            <div class="col-lg-7 mb-5 mb-lg-0 z-index-1">
+                <div class="card left-2 bg-darkTrans">
+                    <div class="card-body p-5 shadow-5 text-center">
+                        <h2 class="mb-5">Editalo!</h2>
+                        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                            <!-- Lluivia matrix -->
+                            <div id="" class="row bubujaForms">
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>1</p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>0</p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>1</p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p></p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>1</p>
+                                </div>
+                                <div class="col-2 efectoCaida bubujaForm absolute">
+                                    <p>1</p>
+                                </div>
+                            </div>
+                            <!-- -->
+                            <div class="row justify-content-between">
+                                <div class="col-md-5">
+                                    <div class="form-outline">
+                                        <input type="month" id="fechaInicio" name="fechaInicio" min="01-01-1800"
+                                        [(ngModel)]="expEdit.fechaInicio" placeholder="Fecha de inicio"
+                                            class="form-control fst-italic p-sticky" />
+                                        <label class="form-label" for="">Inicio</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-outline">
+                                        <input type="month" id="fechaFin" name="fechaFin" name="fechaFin"
+                                            min="01-01-1800" [(ngModel)]="expEdit.fechaFin"
+                                            placeholder="Fecha finalizada" class="form-control fst-italic p-sticky" />
+                                        <label class="form-label" for="">Fin</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Checkbox-->
+                            <div class="form-check d-flex justify-content-end mr-5 mb-4">
+                                <input class="form-check-input" type="checkbox" value="true" id="actualidad"
+                                    (click)="checkeoActual()">
+                                <label class="form-check-label ms-2" for="actualidad">
+                                    Actualidad
+                                </label>
+                            </div>
+
+                            <!-- nombre input -->
+                            <div class="form-outline mb-4">
+                                <input type="text" id="nombreExp" name="nombreExp" [(ngModel)]="expEdit.nombreExp"
+                                    placeholder="Cómo se llama?" class="form-control fst-italic p-sticky" />
+                                <label class="form-label" for="">Nombre de la Academia</label>
+                            </div>
+
+                            <!-- titulo input -->
+                            <div class="form-outline mb-4">
+                                <input type="text" id="subNombreExp" name="subNombreExp" [(ngModel)]="expEdit.subNombreExp"
+                                    placeholder="De qué te recibes?" class="form-control fst-italic p-sticky" />
+                                <label class="form-label" for="">Titulo</label>
+                            </div>
+                            <!-- titulo input -->
+                            <div class="form-outline mb-4">
+                                <textarea id="descripcionExp" name="descripcionExp"
+                                [(ngModel)]="expEdit.descripcionExp"
+                                    placeholder="Pon algunos datos del proyecto aqui.."
+                                    class="form-control fst-italic p-sticky" rows="3"></textarea>
+                                <label class="form-label" for="">Descripcion</label>
+                            </div>
+
+                            <!--  button -->
+                            <div class="d-grid gap-2">
+                                <button type="submit"
+                                    class="btn btn-dark btn-editExp btn-hover-gold btn-lg-block mb-4 p-sticky">
+                                    Editar experiencia
+                                </button>
+
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <!--Fin-->
-                <div class="col">
-                    <div class="form-outline">
-                        <input type="text" id="fechaFin" name="fechaFin" name="fechaFin" [(ngModel)]="expEdit.fechaFin" required   class="form-control" />
-                        <label class="form-label" for="">Fin</label>
-                    </div>
+            </div>
+
+            <div class="col-lg mb-5 mb-lg-0 bg-dark">
+                <div class="w-100 mx-phone-none rounded-4 shadow-4 rectangle-big-dark" alt="">
+
+                    <!-- <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg"  class="w-100 mx-phone-none rounded-4 shadow-4 h-100" alt=""/> -->
+                    <img src="./assets/images/Exp.jpg" class="w-100 mx-phone-none rounded-4 shadow-4 h-100 blur-2"
+                        alt="" />
                 </div>
+                <!-- src="https://wallpaperaccess.com/full/1772233.jpg" -->
             </div>
-
-            <!-- NombreExp -->
-            <div class="form-outline mb-4">
-                <input type="text" id="nombreExp" name="nombreExp" [(ngModel)]="expEdit.nombreExp" required class="form-control" />
-                <label class="form-label" for="">Empresa</label>
-            </div>
-
-            <!-- SubNombreExp -->
-            <div class="form-outline mb-4">
-                <input type="text" id="subNombreExp" name="subNombreExp" [(ngModel)]="expEdit.subNombreExp" required class="form-control" />
-                <label class="form-label" for="">Empleo</label>
-            </div>
-            <!--Descripcion-->
-            <div class="form-outline mb-4">
-                <textarea class="form-control" id="descipcion"name="descripcionExp" [(ngModel)]="expEdit.descripcionExp" required rows="3"></textarea>
-                <label class="form-label" for="">Descripcion</label>
-              </div>
-
-            <!-- Editar -->
-            <button type="submit" class="btn btn-primary btn-block mb-4">Editar</button>
-        </form>
-
+        </div>
     </div>
-</div>
+
+</section>
+<app-footer></app-footer>
