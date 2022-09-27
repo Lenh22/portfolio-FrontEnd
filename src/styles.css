@@ -468,13 +468,17 @@ transition:1s;
   animation-name: barra;
   animation-duration: 2s;
 }
+@keyframes barra {
+  0%{
+    width:0px;
+    /* transform: translate(100%); */
+  }
+}
 .centrado-flex{
   display: flex;
   justify-content: center;
 }
-@keyframes barra {
-  0%{width:0px}
-}
+
 #nubeGris{
   width: 15em;
   animation-name:nubeGris;

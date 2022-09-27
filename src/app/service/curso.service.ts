@@ -8,7 +8,7 @@ import { Curso } from '../model/curso';
   providedIn: 'root'
 })
 export class CursoService {
-URL= environment.URL+"Curso/"
+URL= environment.URL +"Curso/"
 
   constructor(private httpClient:HttpClient) { }
 
