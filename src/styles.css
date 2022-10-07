@@ -67,9 +67,9 @@ img{
   justify-content:center;
 }
 
-.d-flex{
+/* .d-flex{
   font-family: monospace;
-}
+} */
 .d-flex>div>h4 ul{
   font-family: monospace;
 }

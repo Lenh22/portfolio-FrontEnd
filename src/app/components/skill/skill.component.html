@@ -1,5 +1,5 @@
 <div id="skill" class="conteiner-fluid padding-left background-alt">
-    <div class="heading d-flex">
+    <div class="heading d-flex fw-light">
         <h2>Habilidades</h2>
         <!--btn create-->
         <div type="button" class="btn-default btn-create d-flex" routerLink="/nuevaskill" *ngIf="isLogged;">
@@ -11,7 +11,7 @@
     <div id="">
         <div class="row justify-content-between">
             <div class="col-12 col-md-5 p-3" *ngFor="let skill of skillBack">
-                <div class="d-flex justify-content-between col-md-9">
+                <div class="d-flex font-monospace justify-content-between col-md-9">
                     <h4 class="">{{skill.nombreHab}}</h4>
                     <div class="d-flex " *ngIf="isLogged;">
                         <!--btn edit-->

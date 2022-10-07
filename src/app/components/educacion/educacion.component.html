@@ -1,5 +1,5 @@
 <div id="education" class="padding-left background-alt">
-    <div class="heading d-flex">
+    <div class="heading d-flex fw-light">
         <h2>Educación</h2>
         <div type="button" class="btn-default btn-create d-flex" routerLink="/nuevaedu" *ngIf="isLogged;">
             <span class="material-icons-round fs-1 rounded-circle align-items-center">
@@ -71,7 +71,7 @@
                         <div class="card-body">
                             <div class="">
                                 <div id="cursos" class="d-flex">
-                                    <div class="d-flex">
+                                    <div class="d-flex font-monospace">
                                         <h4>Cursos</h4>
                                         <div type="button" class="btn-default btn-create d-flex"
                                             routerLink="/nuevocurso" *ngIf="isLogged;">
@@ -84,13 +84,13 @@
                                 <ul id="listaCursos">
                                     <li *ngFor="let course of cursoBack">
                                         <!--Curso-->
-                                        <div class="d-flex row list">
+                                        <div class="d-flex font-monospace row list">
                                             <div class="col-md-12 col-sm-8">
                                                 <a target="_blank" href="//{{course.linkCurso}}">
                                                     {{course.tituloCurso}}
                                                 </a> | {{course.nombreCurso}}
                                             </div>
-                                            <div class="d-flex col justify-content-end">
+                                            <div class="d-flex font-monospace col justify-content-end">
                                                 <div type="button" class="btn-default btn-edit d-flex"
                                                     routerLink="/editcurso/{{course.id}}" *ngIf="isLogged">
                                                     <span
@@ -98,7 +98,7 @@
                                                         drive_file_rename_outline
                                                     </span>
                                                 </div>
-                                                <div type="button" class="btn-default btn-delete d-flex"
+                                                <div type="button" class="btn-default btn-delete d-flex font-monospace"
                                                     (click)="deleteCurso(course.id)" *ngIf="isLogged">
                                                     <span
                                                         class="material-icons-round fs-3 rounded-circle align-items-center">
@@ -109,12 +109,12 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <div id="idiomas" class="d-flex">
+                                <div id="idiomas" class="d-flex ">
                                     <!--Idioma-->
-                                    <div class="d-flex">
+                                    <div class="d-flex font-monospace">
                                         <h4>Idiomas</h4>
                                         <!--btn create-->
-                                        <div type="button" class="btn-default btn-create d-flex"
+                                        <div type="button" class="btn-default btn-create d-flex font-monospace"
                                             routerLink="/nuevoidioma" *ngIf="isLogged;">
                                             <span class="material-icons-round fs-2 rounded-circle align-items-center">
                                                 add_circle
@@ -124,11 +124,11 @@
                                 </div>
                                 <ul id="listaIdiomas">
                                     <li *ngFor="let idiom of idiomaBack">
-                                        <div class="d-flex row list">
+                                        <div class="d-flex font-monospace row list">
                                             <div class="col-sm-8">
                                                 {{idiom.nombreIdi}} | {{idiom.nivelIdi}}
                                             </div>
-                                            <div class="d-flex col justify-content-end">
+                                            <div class="d-flex font-monospace col justify-content-end">
                                                 <div type="button" class="btn-default btn-edit d-flex"
                                                     routerLink="/editidioma/{{idiom.id}}" *ngIf="isLogged">
                                                     <span

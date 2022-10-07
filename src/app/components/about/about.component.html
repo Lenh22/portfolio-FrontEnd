@@ -3,7 +3,7 @@
         <div class="row justify-content-between">
             <div class="col-md-2 ">
                 <div class="heading d-flex">
-                    <h2 class="d-flex">Sobre Mí</h2>
+                    <h2 class="d-flex fw-light">Sobre Mí</h2>
                     <!--btn-->
                     <div *ngIf="isLogged;" type="button" class="btn-default btn-edit d-flex"
                         routerLink="/editabout/{{about.id}}">
@@ -16,7 +16,7 @@
             </div>
             <!--Imagen e info-->
             <div class="col-md-9">
-                <div *ngIf="about.imagenMi!=''" id="" class="col-md-3 rounded-start fotoPerfil">
+                <div *ngIf="!about.imagenMi" id="" class="col-md-3 rounded-start fotoPerfil">
                     <!-- <img src="{{about.imagenMi}}" class=" rounded-circles  img-thumbnail"alt="Foto Perfil"> -->
                     <div class="h-100 bg-size-cover border border-4 border-white  rounded-circles"
                         [ngStyle]="{'background-image': 'url('+about.imagenMi+')'}"></div>

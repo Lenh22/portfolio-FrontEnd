@@ -1,5 +1,5 @@
 <div id="experience" class="background-alt padding-left">
-    <div class="heading d-flex">
+    <div class="heading d-flex fw-light">
         <h2>Experiencias</h2>
         <!--btn create-->
         <div type="button" class="btn-default btn-create d-flex" routerLink="/nuevaexp" *ngIf="isLogged;">
@@ -20,7 +20,7 @@
                 <p class="vtimeline-date col-12 col-md-4">{{exp.fechaInicio}} | {{exp.fechaFin}}</p>
                 <div data-date="September 2015 – September 2016" class="vtimeline-content">
                     <div class="d-flex justify-content-between">
-                        <h3 class="">{{exp.nombreExp}}</h3>
+                        <h3 class="font-monospace">{{exp.nombreExp}}</h3>
 
                         <div *ngIf="isLogged" class="d-flex ">
                             <!--btn edit-->
