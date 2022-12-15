@@ -39,7 +39,7 @@ export class ExpComponent implements OnInit {
   cargarExp():void{
     this.expService.lista().subscribe(data => {this.experienciaBack = data},
       err =>{
-        alert("No se pudo cargar Experiencias");
+        alert("En mantenimiento, disculpe las molestias");
       });
   }
 

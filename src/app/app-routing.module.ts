@@ -22,7 +22,8 @@ const routes : Routes = [
     {path:'',component:HomeComponent},
     //Login
     {path:'login',component:LoginComponent},//cuando se pone la barra
-    {path: 'nuevo-usuario',component:NuevoUsuarioComponent},
+    // {path: 'nuevo-usuario',component:NuevoUsuarioComponent}, //Crea un nuevo-usuario
+    {path: 'nuevo-usuario',component:LoginComponent},
     //Experiencia
     {path: 'nuevaexp', component:NewExpComponent},
     {path: 'editexp/:id',component:EditExpComponent},
