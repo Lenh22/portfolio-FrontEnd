@@ -4,9 +4,11 @@
 
 export const environment = {
   production: false,
-  // URL:'http://localhost:8080/',
-  // URL: 'https://bkend-portfolio.herokuapp.com/',
-  URL: 'https://portfolio-backend-production-acfa.up.railway.app/'
+  // URL:'http://localhost:8080/', //Local
+  // URL: 'https://bkend-portfolio.herokuapp.com/', //HEROKU
+  // URL: 'https://portfolio-backend-production-acfa.up.railway.app/', // RAILWAY
+  // URL: 'https://portfolio-back-end-wheat.vercel.app/', //VERCEL
+  URL:'https://pf-backend.azurewebsites.net/', //AZURE WEBSITE
   
 };
 

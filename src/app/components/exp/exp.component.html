@@ -41,10 +41,8 @@
                     <h4 class="text-start">{{exp.subNombreExp}}</h4>
                     <!-- <ul> <li *ngFor="let homew of homeworkList">{{homew.hw}} </li> </ul> -->
                     <div class="ms-3 d-list-item">
-                        <p  class="text-start">
-                            {{exp.descripcionExp}}
-
-                        </p>
+                        <p  class="text-start">{{exp.descripcionExp}}</p>
+                        <p *ngIf="exp.nombreExp == null || exp.nombreExp==''" class="text-start">Cargando...</p>
                     </div>
                 </div>
             </div>

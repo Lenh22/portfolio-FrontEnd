@@ -11,7 +11,7 @@
                             drive_file_rename_outline
                         </span>
                     </div>
-
+                    <!--Fin btn-->
                 </div>
             </div>
             <!--Imagen e info-->
@@ -23,9 +23,9 @@
                 </div>
                 <div>
                     <h4 id="nombrePersonal">{{about.nombre}}</h4>
-                    <p id="descripcionAbout">
-                        {{about.descripcion}}
-                    </p>
+                    <h4 *ngIf="about.nombre == null || about.nombre =='' " id="nombrePersonal">Leandro Alonso</h4>
+                    <p id="descripcionAbout">{{about.descripcion}} </p>
+                    <p *ngIf="about.descripcion == null || about.descripcion =='' " id="descripcionAbout">Cargando descripcion... </p>
                 </div>
 
   

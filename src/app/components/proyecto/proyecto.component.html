@@ -44,6 +44,9 @@
                     <div class="p-3">
                         {{project.descripcionProj}}
                     </div>
+                    <div *ngIf="project.descripcionProj==null || project.descripcionProj==''" class="p-3">
+                        Cargando...
+                    </div>
 
                 </div>
             </div>

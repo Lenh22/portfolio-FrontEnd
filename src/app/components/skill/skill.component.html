@@ -13,6 +13,7 @@
             <div class="col-12 col-md-5 p-3" *ngFor="let skill of skillBack">
                 <div class="d-flex font-monospace justify-content-between col-md-9">
                     <h4 class="">{{skill.nombreHab}}</h4>
+                    <h4 *ngIf="skill.nombreHab ==null || skill.nombreHab==''">Cargando...</h4>
                     <div class="d-flex " *ngIf="isLogged;">
                         <!--btn edit-->
                         <div type="button" class="btn-default btn-edit d-flex" routerLink="/editskill/{{skill.id}}">
