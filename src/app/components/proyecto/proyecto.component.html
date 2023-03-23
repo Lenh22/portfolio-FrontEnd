@@ -10,7 +10,7 @@
     </div>
     <div class="container-fluid">
         <div class="row g-0 justify-content-between">
-            <div class="col-md-5 bg-light border mb-3" *ngFor="let project of proyectoBack"> -->
+            <div class="col-md-5 bg-light border mb-3" *ngFor="let project of proyectoBack">
                 <div class="p-3">
                     <div id="" class="d-flex font-monospace justify-content-between configProyecto">
                         <div class="ps-2 col-md-9">
@@ -20,14 +20,14 @@
                             <div class="d-flex font-monospace justify-content-between mr-0">
                                 <h3 class="ps-2 row">{{project.nombreProj}}</h3>
                                 <div class="d-flex" *ngIf="isLogged;">
-                                    
+                                    <!--btn edit-->
                                     <div type="button" class="btn-default btn-edit d-flex"
                                         routerLink="/editproy/{{project.id}}">
                                         <span class="material-icons-round fs-1 rounded-circle align-items-center">
                                             drive_file_rename_outline
                                         </span>
                                     </div>
-                                   
+                                    <!--btn remove-->
                                     <div type="button" class="btn-default btn-delete d-flex"
                                         (click)="delete(project.id)">
                                         <span class="material-icons-round fs-1 rounded-circle align-items-center">
