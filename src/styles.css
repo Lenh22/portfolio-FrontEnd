@@ -25,7 +25,7 @@ img{
 .row-aling{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: end;
 }
 #nombrePersonal{
   transition:1s;
@@ -72,10 +72,6 @@ img{
 } */
 .d-flex>div>h4 ul{
   font-family: monospace;
-}
-.iconoUsuario:hover{
-  color: #7e8890;
-  transition: 0.2s;
 }
 #colorBarra{
   background: #7a6504;
@@ -734,7 +730,6 @@ transition: .5s;
     padding:5em;
   }
   .configProyecto{
-    display: block !important;;
     justify-items: center;
   }
   .configProyecto>button{

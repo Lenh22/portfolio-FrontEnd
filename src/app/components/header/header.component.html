@@ -3,15 +3,15 @@
         <div>
             <!--logoArgProg y usuario-->
             <div class="row-aling pe-3">
-                <div class="col-4">
+                <!-- <div class="col-4">
                     <a target="_blank"
                         href="https://www.argentina.gob.ar/produccion/transformacion-digital-y-economia-del-conocimiento/argentina-programa">
                         <img id="ArgProg"
                             src="./assets/images/icon/APLogo-20-20.png"
                             alt="argpprod" width="200px"></a>
-                </div>
+                </div> -->
                 <div id="centrado" class="col-md-4 fondo pointer">
-                    <a (click)="login()" *ngIf="!isLogged">
+                    <a (click)="login()" *ngIf="!isLogged" class="btn-login">
                         <span class="material-icons-round iconoUsuario" > 
                             <!-- data-bs-toggle="modal" data-bs-target="#login"  CON MODAL-->
                             account_circle

@@ -5,6 +5,8 @@ import { AboutMeService } from 'src/app/service/about-me.service';
 import { PersonaService } from 'src/app/service/persona.service';
 import { PortfolioService } from 'src/app/service/portfolio.service';
 import { TokenService } from 'src/app/service/token.service';
+import { NgIf } from '@angular/common';
+
 
 @Component({
   selector: 'app-about',
@@ -14,7 +16,7 @@ import { TokenService } from 'src/app/service/token.service';
 export class AboutComponent implements OnInit {
   persona: persona = new persona("","","");
   miPorfolio:any;
-
+  aboutB = true;
   aboutBack:AboutMe[]=[];
   isLogged = false;
 

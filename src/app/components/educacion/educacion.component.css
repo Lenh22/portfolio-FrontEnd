@@ -11,6 +11,7 @@
     .list{
         justify-content: start;
         text-align: start;
+        padding: 10px 0px;
     } 
     .celu-img-jus-s-start{
         justify-self: flex-start;
